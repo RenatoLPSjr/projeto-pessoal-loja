@@ -1,0 +1,53 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/nav-admin.ejs'); %>
+
+<hr>
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center fs-4">
+            Pesquisa de produtos
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/admin/search">
+                <input class="form-control" type="search" name="codigo" placeholder="Escreva o código do produto"><br>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-warning" type="submit">Buscar</button>
+                    <a class="btn btn-warning"  href="/admin/products/register">Cadastrar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+
+    <div class="card">
+        <div class="card-header">
+            <b>Nome do Produto:</b> <%= product.name %>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col">
+                    <b>Cor:</b> <%= product.name %>
+                </div>
+                <div class="col">
+                    <b>Tamanho:</b> <%= product.size %>
+                </div>
+                <div class="col">
+                    <b>Marca:</b> <%= product.marca %>
+                </div>
+                <div class="col">
+                    <b>Quantidade no estoque:</b> 0
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-warning" type="submit">Editar</button>
+
+                    <button class="btn btn-danger" type="submit">Deletar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include ('../../partials/footer.ejs'); %>

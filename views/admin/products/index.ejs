@@ -1,0 +1,22 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/nav-admin.ejs'); %>
+
+<hr>
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center fs-4">
+            Pesquisa de produtos
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/admin/search">
+                <input class="form-control" type="search" name="codigo" placeholder="Escreva o código do produto"><br>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-warning" type="submit">Buscar</button>
+                    <a class="btn btn-warning"  href="/admin/products/register">Cadastrar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ('../../partials/footer.ejs'); %>

@@ -1,0 +1,47 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/nav-admin.ejs'); %>
+
+<hr>
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center fs-4">
+            Cadastrar Produto
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/products/save">
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label for="nome-produto" class="form-label">Nome do produto</label>
+                        <input type="text" class="form-control" name="name" id="nome-produto" placeholder="Digite o nome do produto aqui" required>
+                    </div>
+                    <div class="mb-3 col">
+                        <label for="nome-produto" class="form-label">Código de Barras</label>
+                        <input type="text" class="form-control" name="codbar" id="nome-produto" placeholder="Digite o codigo de barras aqui" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label for="nome-produto" class="form-label">Cor</label>
+                        <input type="text" class="form-control"name="color" id="nome-produto" placeholder="Digite a cor do produto aqui" required>
+                    </div>
+                    <div class="mb-3 col">
+                        <label for="nome-produto" class="form-label">Tamanho</label>
+                        <input type="text" class="form-control" name="size" id="nome-produto" placeholder="Digite o tamanho aqui" required>
+                    </div>
+                    <div class="mb-3 col">
+                        <label for="nome-produto" class="form-label">Marca</label>
+                        <input type="text" class="form-control" name="marca"  id="nome-produto" placeholder="Digite a marca aqui" required>
+                    </div>
+                </div>
+    
+                <div class="d-grid gap-2">
+                    <button class="btn btn-warning" type="submit">Cadastrado</button>
+                </div>
+    
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+<%- include ('../../partials/footer.ejs'); %>
