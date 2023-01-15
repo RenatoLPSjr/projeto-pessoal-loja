@@ -26,23 +26,28 @@
         <div class="card-body">
             <div class="row mb-3">
                 <div class="col">
-                    <b>Cor:</b> <%= product.name %>
+                    <b>Cor</b><div class="border"><%= product.color %></div> 
                 </div>
                 <div class="col">
-                    <b>Tamanho:</b> <%= product.size %>
+                    <b>Tamanho:</b><div class="border"><%= product.size %></div> 
                 </div>
                 <div class="col">
-                    <b>Marca:</b> <%= product.marca %>
+                    <b>Marca:</b> <div class="border"><%= product.marca %></div> 
                 </div>
                 <div class="col">
-                    <b>Quantidade no estoque:</b> 0
+                    <b>Quantidade no estoque:</b><div class="border"><%= product.estoque %></div> 
                 </div>
+
+            
             </div>
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-warning" type="submit">Editar</button>
+                    <a href="/admin/product/edit/<%= product.id %>" class="btn btn-warning" type="submit">Editar</a>
+                    <form method="POST" action="/admin/products/delete" style="display: inline;" onsubmit="confirmarDelecao(event, this)">
+                        <input type="hidden" name ="id" value="<%= product.id %>">
+                        <button class="btn btn-danger" type="submit" >Deletar</button>
+                    </form>
 
-                    <button class="btn btn-danger" type="submit">Deletar</button>
                 </div>
             </div>
 
@@ -51,3 +56,13 @@
 </div>
 
 <%- include ('../../partials/footer.ejs'); %>
+
+<script>
+    function confirmarDelecao(event, form){
+        event.preventDefault();
+        var decision = confirm("Voce quer deletar esse item?");
+        if(decision){
+            form.submit();
+        }
+    }
+</script>

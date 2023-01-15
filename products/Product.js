@@ -23,6 +23,10 @@ const Product = connection.define('tbprodutos', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    estoque: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+    }
 });
 
 Product.sync({force: false}).then(()=>{});

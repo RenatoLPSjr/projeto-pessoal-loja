@@ -1,0 +1,36 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/nav-admin.ejs'); %>
+
+<hr>
+<div class="container">
+   <table class="table table-striped   ">
+      <thead>
+         <tr>
+            <th>Nome</th>
+            <th>Codigo de Barras</th>
+            <th>Cor</th>
+            <th>Tamanho</th>
+            <th>Marca</th>
+            <th>Quantidade</th>
+         </tr>
+      </thead>
+
+
+      <tbody>
+         <% product.forEach(product => { %>
+            <tr>
+               <td><%= product.name %></td>
+               <td><%= product.cod_barra  %></td>
+               <td><%= product.color  %></td>
+               <td><%= product.size  %></td>
+               <td><%= product.marca  %></td>
+               <td><%= product.estoque  %></td>
+            </tr>
+            <% }); %>
+      </tbody>
+
+
+   </table>
+</div>
+
+<%- include ('../../partials/footer.ejs'); %>

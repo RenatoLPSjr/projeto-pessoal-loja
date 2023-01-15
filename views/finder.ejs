@@ -12,7 +12,6 @@
                 <input class="form-control" type="search" name="codigo" placeholder="Escreva o código do produto"><br>
                 <div class="d-grid gap-2">
                     <button class="btn btn-warning" type="submit">Buscar</button>
-                    <a class="btn btn-warning"  href="/admin/products/register">Cadastrar</a>
                 </div>
             </form>
         </div>
@@ -20,22 +19,22 @@
     <hr>
 
     <div class="card">
-        <div class="card-header">
+        <div class="card-header fs-4">
             <b>Nome do Produto:</b> <%= product.name %>
         </div>
         <div class="card-body">
             <div class="row mb-3">
                 <div class="col">
-                    <b>Cor:</b> <%= product.name %>
+                    <b>Cor</b><div class="border"><%= product.color %></div> 
                 </div>
                 <div class="col">
-                    <b>Tamanho:</b> <%= product.size %>
+                    <b>Tamanho:</b><div class="border"><%= product.size %></div> 
                 </div>
                 <div class="col">
-                    <b>Marca:</b> <%= product.marca %>
+                    <b>Marca:</b> <div class="border"><%= product.marca %></div> 
                 </div>
                 <div class="col">
-                    <b>Quantidade no estoque:</b> 0
+                    <b>Quantidade no estoque:</b><div class="border">0</div> 
                 </div>
             </div>
 

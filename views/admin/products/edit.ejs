@@ -4,46 +4,47 @@
 <hr>
 <div class="container">
     <div class="card">
-        <div class="card-header text-center fs-4">
-            Cadastrar Produto
+        <div class="card-header fs-3">
+            Editar produto
         </div>
         <div class="card-body">
-            <form method="POST" action="/products/save">
+            <form method="POST" action="/admin/products/update">
                 <div class="row">
                     <div class="mb-3 col">
                         <label for="nome-produto" class="form-label">Nome do produto</label>
-                        <input type="text" class="form-control" name="name" id="nome-produto" placeholder="Digite o nome do produto aqui" required>
+                        <input type="text" class="form-control" name="name" id="nome-produto" value="<%= product.name %>" placeholder="<%= product.name %>" >
                     </div>
                     <div class="mb-3 col">
                         <label for="nome-produto" class="form-label">Código de Barras</label>
-                        <input type="text" class="form-control" name="codbar" id="nome-produto" placeholder="Digite o codigo de barras aqui" required>
+                        <input type="text" class="form-control" name="codbar" id="codigo-produto" value="<%= product.cod_barra %>" placeholder="<%= product.cod_barra %>" >
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col">
                         <label for="nome-produto" class="form-label">Cor</label>
-                        <input type="text" class="form-control"name="color" id="nome-produto" placeholder="Digite a cor do produto aqui" required>
+                        <input type="text" class="form-control" name="color" id="color-produto" value="<%= product.color %>" placeholder="<%= product.color%>" >
                     </div>
                     <div class="mb-3 col">
                         <label for="nome-produto" class="form-label">Tamanho</label>
-                        <input type="text" class="form-control" name="size" id="nome-produto" placeholder="Digite o tamanho aqui" required>
+                        <input type="text" class="form-control" name="size" id="tamanho-produto" value="<%= product.size %>" placeholder="<%= product.size %>" >
                     </div>
                     <div class="mb-3 col">
                         <label for="nome-produto" class="form-label">Marca</label>
-                        <input type="text" class="form-control" name="marca"  id="nome-produto" placeholder="Digite a marca aqui" required>
+                        <input type="text" class="form-control" name="marca"  id="marca-produto" value="<%= product.marca %>" placeholder="<%= product.marca %>" >
                     </div>
                     <div class="mb-3 col">
-                        <label for="estoque-produto" class="form-label">Quantidade</label>
-                        <input type="text" class="form-control" name="estoque"  id="quantidade-produto" placeholder="Digite o estoque" required>
+                        <label for="nome-produto" class="form-label">Quantidade</label>
+                        <input type="text" class="form-control" name="estoque"  id="quantidade-produto" value="<%= product.estoque %>"  >
                     </div>
+
+                    <input type="hidden" name ="id" value="<%= product.id %>">
                 </div>
     
                 <div class="d-grid gap-2">
-                    <button class="btn btn-warning" type="submit">Cadastrado</button>
+                    <button class="btn btn-warning" type="submit">Atualizar</button>
                 </div>
     
             </form>
-            
         </div>
     </div>
 </div>
